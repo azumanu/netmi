@@ -1,0 +1,194 @@
+/* === 공통 스타일 === */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.6;
+  }
+  
+  /* 비디오 배경 */
+  .video-background {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .video-background video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  
+  .video-background .content {
+    position: absolute;
+    top: 50%; /* 화면 중앙으로 */
+    left: 50%;
+    transform: translate(-50%, -50%); /* 중앙 정렬 */
+    text-align: center;
+    z-index: 2;
+    color: #fff; /* 흰색 폰트 */
+  }
+  
+  .video-background .content h1 {
+    font-size: 3rem; /* 헤더 크기 */
+    margin-bottom: 20px;
+  }
+  
+  .video-background .content p {
+    font-size: 0.8rem; /* 인용문 크기 */
+    font-style: italic; /* 이탤릭체로 인용 강조 */
+    color: #ccc; /* 약간의 대비를 위해 연한 회색 */
+  }
+  
+  .video-background::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* 어두운 필터 */
+    z-index: 1;
+  }
+  
+  /* 콘텐츠 래퍼 */
+  .content-wrapper {
+    margin: 50px auto;
+    padding: 5px;
+    max-width: 1200px;
+  }
+  
+  /* 검색 섹션 */
+  .movie-search {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .search-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .search-results {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 15px;
+    padding: 10px;
+  }
+  
+  .search-results .card {
+    flex: 0 0 auto;
+    width: 100px;
+    text-align: center;
+    background-color: #2a2a2a; /* 기본 배경색 */
+    border: 2px solid #444; /* 카드 보더 */
+    border-radius: 8px;
+    padding: 10px;
+    color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .search-results .card:hover {
+    transform: scale(1.1); /* 호버 시 확대 효과 */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* 호버 시 그림자 효과 */
+  }
+  
+  .search-results .card.selected {
+    background-color: #fff; /* 선택 시 흰색 배경 */
+    color: #2a2a2a; /* 선택 시 텍스트 색 반전 */
+    border-color: #007bff; /* 선택된 카드의 보더 색상 */
+  }
+
+  /* 이미지 갤러리 */
+  .image-gallery {
+    display: flex; /* 플렉스 레이아웃 */
+    flex-direction: column; /* 세로로 클러스터 정렬 */
+    gap: 20px; /* 클러스터 간 간격 */
+    margin-top: 40px;
+    align-items: center; /* 중앙 정렬 */
+  }
+
+  /* 클러스터별 배치 */
+  .group-container {
+    display: flex; /* 클러스터 내부 이미지는 가로 정렬 */
+    flex-direction: row; /* 가로 정렬 */
+    gap: 15px; /* 이미지 간 간격 */
+    padding: 10px;
+    background-color: var(--cluster-color, #2a2a2a); /* 클러스터 배경색 */
+    border-radius: 8px; /* 둥근 모서리 */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* 약간의 그림자 */
+    max-width: 1200px; /* 클러스터 최대 너비 제한 */
+  }
+  
+  /* 이미지 항목 */
+  .image-item {
+    flex: 0 0 auto; /* 고정 크기 유지 */
+    width: 200px;
+    text-align: center;
+    background-color: #222;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+
+  /* 이미지 배경색 및 크기 */
+  .image-item img {
+    width: 100%; /* 이미지 너비 */
+    height: auto; /* 비율 유지 */
+    max-width: 150px; /* 이미지 최대 크기 제한 */
+    border-radius: 5px; /* 둥근 모서리 */
+    transition: transform 0.3s ease; /* 호버 시 확대 */
+  }
+
+  /* 텍스트 */
+.image-item p {
+    margin: 10px 0 0; /* 텍스트와 이미지 간격 */
+    font-size: 0.9rem;
+    color: #ccc;
+  }
+  
+  /* 스케일 효과 */
+  .image-item:hover {
+    transform: scale(1.1); /* 호버 시 확대 */
+  }
+  
+  /* 배경색 설정 */
+  .group-container {
+    background-color: var(--cluster-color, #2a2a2a); /* 클러스터 배경색 */
+  }
+  
+
+  #scatterPlot {
+    display: block; /* 인라인 요소가 아닌 블록 요소로 설정 */
+    margin: 20px auto; /* 수평 가운데 정렬 */
+  }
+  
+  /* 스크롤바 숨기기 */
+.group-container::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+  .group-container {
+    -ms-overflow-style: none; /* IE, Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* 반응형 설정 */
+
+@media (max-width: 768px) {
+    .group-container {
+      flex-direction: column; /* 작은 화면에서 세로로 정렬 */
+    }
+  
+    .image-item img {
+      max-width: 100px; /* 이미지 크기 축소 */
+    }
+  }
