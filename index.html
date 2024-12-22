@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kino-Eye 2.0</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 비디오 배경 섹션 -->
+  <div class="video-background">
+    <video autoplay loop muted playsinline>
+      <source src="kinoeye2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <!-- 텍스트 콘텐츠 -->
+    <div class="content">
+      <h1>Kino-Eye 2.0</h1>
+      <h3>Explore the cinematic world through the mechanical eye.</h3>
+      <p>"I am kino-eye, I am a mechanical eye. I, a machine, show you the world as only I can see it. Now and forever, I free myself from human immobility, I am in constant motion, I draw near, then away from objects, I crawl under, I climb onto them... Now I, a camera, fling myself along their resultant, maneuvering in the chaos of movement, recording movement, starting with movements composed of the most complex combinations... My path leads to the creation of a fresh perception of the world. I decipher in a new way a world unknown to you." <br> - Dziga Vertov, 1923
+      </p>
+    </div>
+  </div>
+
+  <!-- 검색 및 이미지 갤러리 섹션 -->
+  <div class="content-wrapper">
+    <!-- 검색 섹션 -->
+    <section class="movie-search">
+      <h2>Search for a Movie</h2>
+      <div class="search-container">
+        <input type="text" id="movieSearchInput" placeholder="Enter movie title..." />
+        <button id="searchButton">Search</button>
+      </div>
+      <div id="searchResults" class="search-results"></div>
+    </section>
+
+    <!-- 이미지 갤러리 -->
+    <section class="image-gallery">
+      <div class="scatter-container">
+        <canvas id="scatterPlot" width="200" height="100"></canvas>
+      </div>
+      <div id="imageContainer" class="images"></div>
+      <div id="errorLog" class="error-log"></div>
+    </section>
+  </div>
+
+  <script src="https://unpkg.com/ml5@0.6.0/dist/ml5.min.js"></script>
+  <!-- JavaScript 파일 -->
+  <script src="main5.js"></script>
+</body>
+</html>
